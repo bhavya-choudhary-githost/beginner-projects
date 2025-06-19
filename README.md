@@ -13,6 +13,7 @@ This repository collects some of my early Python learning projects — small scr
 - `for_loop.py`: Experiments with `for` loops.
 - `python_easter_eggs.py`: Hidden and fun Python syntax quirks.
 - `f_string_speed_comparison.py`: Timing different string formatting methods.
+- `collections.py`: Learning about the `collections` standard module.
 
 ---
 

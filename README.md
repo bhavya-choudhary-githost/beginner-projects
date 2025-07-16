@@ -4,9 +4,12 @@ This repository collects some of my early Python learning projects — small scr
 
 ## Folders
 
-- `OOPS/`: Basic object-oriented programs.
+- `OOPS/`: Basic object-oriented programs
   - `mcq/`: Simple multiple choice quiz.
   - `studentrecord/`: Basic student management example using classes.
+- `Calculator/`: A simple calculator
+  - `calculator.py`: Main code
+  - `README.md`: Markdown file
 
 ## Scripts
 

@@ -1,6 +1,6 @@
 # Beginner Projects
 Hello there!,
-This repository collects some of my early Python learning projects — small scripts and experiments that helped me build a foundation in programming.
+This repository collects some of my early Python learning projects — small scripts and experiments that helped me build a foundation in programming while also being a sort of notes to see some things.
 
 ## Folders
 
@@ -14,6 +14,8 @@ This repository collects some of my early Python learning projects — small scr
 - `python_easter_eggs.py`: Hidden and fun Python syntax quirks.
 - `f_string_speed_comparison.py`: Timing different string formatting methods.
 - `collections.py`: Learning about the `collections` standard module.
+- `itertools.py` : Learning about the `itertools` standard module.
+- `random_module.py` : Learning about the `random` standard module.
 
 ---
 

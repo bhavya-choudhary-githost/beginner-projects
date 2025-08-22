@@ -1,22 +1,26 @@
 # Beginner Projects
-Hello there!,
-This repository collects some of my early learning projects — small scripts and experiments that helped me build a foundation in programming. It also helped me in learning the importance and best practices of writing good documentation.
 
-## Folders
+Hello there!  
 
-- `Html-Css/`: Contains some pretty basic markdown notes and syntax 
-  - `html`
-  - `css`
+This repository contains some of my early learning projects — small scripts and experiments that helped me build a foundation in programming. These projects also helped me understand the importance of good documentation.
+
+## Folder Structure
+
+- `Mini-notes/` — Basic markdown notes
+  - `html/`
+  - `css/`
 
 - `Scripts/`
-  - `python_easter_eggs.py`: Hidden and fun Python syntax quirks.
-  - `f_string_speed_comparison.py`: Timing different string formatting methods.
+  - `python_easter_eggs.py` — Hidden and fun Python syntax quirks
+  - `f_string_speed_comparison.py` — Timing different string formatting methods
+  - `Python-Modules/`
+    - `collections_demo.py` — Learning about the `collections` module
+    - `itertools_examples.py` — Learning about `itertools`
+    - `random_module.py` — Learning about the `random` module
 
-  -`Python-Modules/`
-    - `collections.py`: Learning about the `collections` standard module.
-    - `itertools.py` : Learning about the `itertools` standard module.
-    - `random_module.py` : Learning about the `random` standard module.
+## How to Run
 
----
+Run any Python script using Python 3:
 
-These were built while learning the very basics. For larger, focused projects, see my other repositories.
+```bash
+python script_name.py

@@ -34,7 +34,6 @@
         color: value;
     }
     ```
-~ do you remember color-picker
 
 ## 3 Fonts
 - `using external fonts`

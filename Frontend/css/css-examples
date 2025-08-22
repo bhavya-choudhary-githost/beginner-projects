@@ -1,0 +1,63 @@
+/* Colors */
+h1 { color: red; background-color: yellow; }
+p { color: blue; background-color: lightgrey; }
+
+/* Fonts */
+body { font-family: "Arial", sans-serif; }
+h2 { font-family: "Courier New", monospace; font-size: 20px; font-weight: bold; }
+
+/* Borders */
+div.box { border: 2px solid black; border-radius: 10px; padding: 10px; margin: 10px; }
+
+/* Layout */
+.container { display: flex; flex-direction: row; gap: 10px; margin: 20px; }
+.item { width: 100px; height: 100px; background-color: lightblue; }
+
+/* Text Shadows */
+h3 { text-shadow: 2px 2px 4px gray; }
+
+/* Margins and Padding */
+body { margin: 0; padding: 10px; }
+div.box { margin-top: 15px; padding: 20px; }
+
+/* Float */
+#float-left { float: left; margin-right: 10px; }
+#float-right { float: right; margin-left: 10px; }
+.clear-both { clear: both; }
+
+/* Overflow */
+div.overflow-box { width: 200px; height: 75px; overflow: auto; border: 2px groove black; }
+
+/* Display */
+.inline-example { display: inline; }
+.block-example { display: block; width: 100px; height: 100px; background-color: coral; }
+.inline-block-example { display: inline-block; }
+
+/* Positions */
+#relative-box { position: relative; top: 20px; left: 10px; width: 150px; height: 150px; background-color: lightgreen; }
+#absolute-box { position: absolute; top: 50px; left: 200px; width: 100px; height: 100px; background-color: pink; }
+
+/* Background Images */
+body.bg-example { background-image: url("background.jpg"); background-repeat: no-repeat; background-position: center; background-attachment: fixed; background-size: cover; }
+
+/* Pseudo-classes */
+a:link { color: yellow; }
+a:hover { color: blue; font-size: 1.1em; }
+a:active { color: red; }
+a:visited { color: purple; }
+
+/* Pseudo-elements */
+h1::first-letter { font-size: 1.5em; color: orange; }
+p::first-line { font-weight: bold; }
+
+/* Navbar */
+.navbar ul { list-style-type: none; background-color: grey; margin: 0; padding: 0; overflow: hidden; }
+.navbar li { float: left; }
+.navbar a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+.navbar a:hover { background-color: darkgrey; }
+
+/* Dropdown */
+.dropdown { display: inline-block; position: relative; }
+.dropdown .content { display: none; position: absolute; background-color: grey; min-width: 100px; box-shadow: 3px 2px 1px black; z-index: 1; }
+.dropdown:hover .content { display: block; }
+.dropdown .content a { display: block; color: black; text-decoration: none; padding: 10px 15px; }

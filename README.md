@@ -6,9 +6,10 @@ This repository contains some of my early learning projects — small scripts an
 
 ## Folder Structure
 
-- `Mini-notes/` — Basic markdown notes
-  - `html/`
+- `Frontend/` — Basics of syntax and some notes.
+  - `html/`: This is a messier folder but i have no desire to fix it
   - `css/`
+    - `css.md`: Notes on css
 
 - `Scripts/`
   - `python_easter_eggs.py` — Hidden and fun Python syntax quirks

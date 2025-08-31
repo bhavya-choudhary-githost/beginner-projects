@@ -194,10 +194,49 @@
 - `example`
     ```js
     function openFridge(...food){
-        console.log(food)
+        console.log(food);
     }
     const food1 = "pizza";
     const food2 = "milk";
     
-    openFridge(food1, food2)
+    openFridge(food1, food2);
+    ```
+
+
+## 12 Callback
+- `theory`
+    - A function we pass into another function to be called later
+    - Used to handle asychronous operations
+    - "Hey, when you're done with this, do this next"
+- `example`
+    ```js
+    Process(Greet);
+
+    function Greet(name){
+        console.log("Hi " + name + "!");
+    }
+
+    function Process(callbacker){
+        let name = window.prompt("Enter your name: ");
+        callbacker(name)
+    }
+    ```
+
+
+## 13 Array Methods
+- `forEach`
+    - Method used to iterate over the elements of an array and apply a function(callback) to each element
+    - element index array are predefined parameters for these
+    ```js
+    let fruits = ["apPle", "baNana", "manGo"];
+
+    fruits.forEach(capitalise);
+    fruits.forEach(display);
+
+    function capitalise(element, index, arr){
+        arr[index] = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+        }
+    function display(element, index, arr){
+        console.log(element, index, arr)
+    }
     ```

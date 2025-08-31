@@ -7,6 +7,7 @@
 - `window.prompt()` gets input
 - `typeconversion`: x = Number/String/Boolean(x)
 - `document.getElementByID("id").textcontent`: changes some ID's text content
+- `function`: function <name>(<parameters>){<code>}
 - `comments`
     - by // comment
     - by /*
@@ -157,7 +158,46 @@
     for/for-in/for-of: in iterate keys/indexes, of iterates values
 
 
+## 9 Arrays
+- `theory`
+    - A data structure that stores ordered collection of values
+- `example`
+    ```js
+    let fruits = ["apple", "banana", "mango"];
+    fruits.push("item"); // adds to end and returns length
+    a = fruits.pop(); //removes from end and returns removed element
+    b = fruits.shift(); //removes from start and returns removed element
+    fruits.unshift("item"); // adds to end and returns length
+    fruits.length;
+    fruits.indexOf("apple");
+    fruits.sort().reverse();
+    ```
+
+## 10 Spread Operator
+- `theory`
+    - It separates an array/string into elements
+- `example`
+    ```js
+    name = "username";
+    letters = [...name].join("-");
+    vegetables = ["potato", "brinjal"];
+    fruits = ["apple", "banana", "mango"];
+
+    foods = [...fruits, ... vegetables, "peanut butter", "chocolate"];
+    console.log(foods);
+    ```
 
 
-
-
+## 11 Rest Parameter
+- `theory`
+    - Allows a function to work with variable number of arguments by bundling them into an array
+- `example`
+    ```js
+    function openFridge(...food){
+        console.log(food)
+    }
+    const food1 = "pizza";
+    const food2 = "milk";
+    
+    openFridge(food1, food2)
+    ```

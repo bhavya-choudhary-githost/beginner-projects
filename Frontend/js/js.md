@@ -7,7 +7,26 @@
 - `window.prompt()` gets input
 - `typeconversion`: x = Number/String/Boolean(x)
 - `document.getElementByID("id").textcontent`: changes some ID's text content
-- `function`: function <name>(<parameters>){<code>}
+- `function`: function <name>(<parameters>){<code>} in function declaration;
+    we can also define a function as a value or variable by function expression which can be shortened with arrow function
+    ```js
+    function hello1(){
+        console.log("hello")
+    }
+    hello2 = function(){
+        console.log("hello")
+    }
+    hello3 = () => console.log("hello");
+    ```
+- `objects`: object name = {key:value, function}
+    "this" keyword reference the immediate object, doesnt work with arrow functions
+    ```js
+    object person1 = {
+        firstname: Spongebob,
+        lastname: Squarepants,
+        sayhi = function(){console.log(`hi im ${this.name}!`)}
+    }
+    ```
 - `comments`
     - by // comment
     - by /*
@@ -225,7 +244,7 @@
 
 ## 13 Array Methods
 - `forEach`
-    - Method used to iterate over the elements of an array and apply a function(callback) to each element
+    - accepts a callback then executes function once for each array element
     - element index array are predefined parameters for these
     ```js
     let fruits = ["apPle", "baNana", "manGo"];
@@ -238,5 +257,37 @@
         }
     function display(element, index, arr){
         console.log(element, index, arr)
+    }
+    ```
+- `map`
+    - accepts a callback then applies that function (which transforms) to each element of the array, then returns a new array
+    ```js
+    const dates = ["9-5-2025","10-2-2025", "3-30-2021"];
+    const formatteddates = dates.map(format);
+
+    function format(element){
+        const parts = element.split("-")
+        return `${parts[0]}/${parts[1]}/${parts[2]}`
+    }
+    ```
+- `filter`
+    -  accepts a callback then applies that function (which checks) to each element of the array, then returns a new array
+    ```js
+    const fruits = ["apple", "banana", "cocomelon"]
+    const smallwords = fruits.filter(issmall)
+
+    function issmall(element){
+        return element.length < 6;
+    }
+    ```
+- `reduce`
+    - accepts a callback then applies that function (which reduces the elements to a single value) to each element of the array, then returns the single value
+    - has two parameters: accumulator and element
+    ```js
+    const marks = [76, 89, 30, 68]
+    const max = marks.reduce(getMax)
+
+    function getMax(accumulator, element){
+        return Math.max(accumulator, element)
     }
     ```

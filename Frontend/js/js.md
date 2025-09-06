@@ -6,7 +6,7 @@
 - `window.alert(`message`)`: displays an alert
 - `window.prompt()` gets input
 - `typeconversion`: x = Number/String/Boolean(x)
-- `document.getElementByID("id").textcontent`: changes some ID's text content
+- `document.getElementById("id").textContent`: changes some ID's text content
 - `function`: function <name>(<parameters>){<code>} in function declaration;
     we can also define a function as a value or variable by function expression which can be shortened with arrow function
     ```js
@@ -18,13 +18,13 @@
     }
     hello3 = () => console.log("hello");
     ```
-- `objects`: object name = {key:value, function}
+- `objects`: const name = {key:value, function}
     "this" keyword reference the immediate object, doesnt work with arrow functions
     ```js
-    object person1 = {
-        firstname: Spongebob,
-        lastname: Squarepants,
-        sayhi = function(){console.log(`hi im ${this.name}!`)}
+    const person1 = {
+        firstname: "Spongebob",
+        lastname: "Squarepants",
+        sayhi: function(){console.log(`hi im ${this.firstname}!`)}
     }
     ```
 - `comments`
@@ -35,7 +35,7 @@
 - `other`
     - template literals require backticks along with ${value}
     - 'typeof' is used to find variable type
-    - semicolon is used after every statement
+    - semicolon is after every statement optional to put yourself but recommended for clarity
     - const used instead of let for variables that dont change
     - .checked property
 
@@ -59,7 +59,7 @@
         Math.min(a, b, c)
         Math.max(a, b, c)
     - `other`
-    Math.random() : gives a random number between 1 and 0
+    Math.random() : gives a random number between 0(inclusive) and 1(exclusive)
 
 
 ## 3 Ternary Operator
@@ -104,8 +104,8 @@
             console.log("Monday");
             break;
         case 2:
-            break;
             console.log("Tuesday");
+            break;
     }
     ```
 
@@ -174,7 +174,7 @@
     break/continue
 
     while/do-while
-    for/for-in/for-of: in iterate keys/indexes, of iterates values
+    for/for-in/for-of: in = iterate keys/indexes, of = iterates values
 
 
 ## 9 Arrays
@@ -186,7 +186,7 @@
     fruits.push("item"); // adds to end and returns length
     a = fruits.pop(); //removes from end and returns removed element
     b = fruits.shift(); //removes from start and returns removed element
-    fruits.unshift("item"); // adds to end and returns length
+    fruits.unshift("item"); // adds to start and returns length
     fruits.length;
     fruits.indexOf("apple");
     fruits.sort().reverse();
@@ -291,3 +291,213 @@
         return Math.max(accumulator, element)
     }
     ```
+- `sort`
+    - sorts the elements of an array as strings in a lexicographic order,
+    lexicographic = (alphabet + number + symbols) as strings
+    ```js
+    // Sorting strings (alphabetical)
+    const characters = ["SpongeBob", "Patrick", "Squidward", "Mr. Krabs", "Plankton"];
+    characters.sort();
+    console.log(characters);
+    // ["Mr. Krabs", "Patrick", "Plankton", "SpongeBob", "Squidward"]
+
+    // Sorting numbers (needs compare function)
+    const scores = [40, 100, 1, 5, 25, 10];
+    scores.sort((a, b) => a - b); 
+    console.log(scores);
+    // [1, 5, 10, 25, 40, 100]
+
+    // Sorting objects by a property
+    const employees = [
+    { name: "SpongeBob", age: 20 },
+    { name: "Squidward", age: 32 },
+    { name: "Patrick", age: 22 }
+    ];
+    employees.sort((a, b) => a.age - b.age);
+    console.log(employees);
+    /*
+    [
+    { name: "SpongeBob", age: 20 },
+    { name: "Patrick", age: 22 },
+    { name: "Squidward", age: 32 }
+    ]
+    */
+    ```
+    
+    - `shuffling`
+    shuffling using the Fisher-Yates algorithm
+    ```js
+    function shuffleArray(array) {
+    // Copy array to avoid modifying original
+    const arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+    // Pick a random index from 0 to i
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Swap arr[i] with arr[j]
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr;
+    }
+
+    // Example usage
+    const fruits = ["apple", "banana", "mango", "grapes", "orange"];
+    const shuffledFruits = shuffleArray(fruits);
+
+    console.log(shuffledFruits);
+    ```
+
+
+## 14 Constructor
+- special method for defining attributes and methods of an object
+```js
+function Car(brand, model, year, color){
+    this.brand = brand,
+    this.model = model,
+    this.year = year,
+    this.color = color
+    this.drive = function(){console.log(`You're driving ${this.model}`)}
+    }
+const car1 = new Car("Ford", "Mustang", 2024, "Red")
+car1.drive()
+```
+
+## 15 Classes
+- provides a cleaner and more structured way to defining attributes and methods compared to constructor, e.g. static keywords, encapsulation, inheritance etc.
+    - `static`: keyword that defines the properties and methods pertaining to the class itself rather than the object created from that class.(class owns anything static not the objects)
+    ```js
+    class User{
+        static usercount = 0;
+
+        constructor(username){
+            this.username = username;
+            User.usercount++;
+        }
+   }
+   const user1 = new User("patrick")
+   ```
+   
+   - `inheritance`: allows a new class to inherit the properties and methods of another class (parent => child)
+   ```js
+   class Animal{
+        alive = true;
+
+        sleep(){
+            console.log(`this ${this.name} is fast asleep`)
+        }
+   }
+   class Zebra extends Animal{
+        name = "zebra";
+   }
+   const zebra = new Zebra();
+   ```
+   - `super keyword`: special keyword used within children class to refer to the parent class
+   ```js
+       class Animal {
+      constructor(name) {
+        this.name = name;
+      }
+    }
+
+    class Dog extends Animal {
+      constructor(name, breed) {
+        super(name); // Calls the Animal constructor
+        this.breed = breed;
+      }
+    }
+    ```
+    - `getters and setters`: these modify and validate a value when reading/writing a property
+        - `getters`: special method that makes a property readable
+        - `setters`: special method that makes a property writable
+        - `e.g.`
+        ```js
+        class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this._width = width; // use underscore for backing variable
+            }
+
+        set width(newWidth) {
+            if (newWidth > 0) {
+            this._width = newWidth;
+            }
+        }
+
+        get width() {
+            return this._width;
+        }
+        }
+
+        const rectangle = new Rectangle(10, 5);
+        console.log(rectangle.width); // 5
+        rectangle.width = 20;
+        console.log(rectangle.width); // 20
+
+        ```
+
+## 16 Destructuring 
+- extract values from array/objects, then assign them to variables in a convenient way
+ [] used to destructure arrays
+ {} used to destructure objects
+- `arrays`
+    ```js
+    fruits = ["apple", "banana", "mango", "grapes", "orange"]
+    const [fav, nextFav, ...others] = fruits;
+    console.log(fav);     // apple
+    console.log(nextFav); // banana
+    console.log(others);  // ["mango", "grapes", "orange"]
+    ```
+- `objects`
+    ```js
+    const spongebob = {
+        name: "SpongeBob SquarePants",
+        job: "Fry Cook",
+        bestFriend: "Patrick Star",
+        neighbor: "Squidward Tentacles",
+        boss: "Mr. Krabs",
+        pet: "Gary"
+    };
+    const { bestFriend, pet, ...others } = spongebob;
+    console.log(bestFriend); // Patrick Star
+    console.log(pet);        // Gary
+    console.log(others);     // { name: "SpongeBob SquarePants", job: "Fry Cook", neighbor: "Squidward Tentacles", boss: "Mr. Krabs" }
+
+    // --- Nested Object Example ---
+    const show = {
+        title: "SpongeBob SquarePants",
+        characters: {
+            main: "SpongeBob",
+            sidekick: "Patrick",
+            grumpyNeighbor: "Squidward",
+            boss: "Mr. Krabs",
+            pet: "Gary"
+        }
+    };
+    // Rest inside nested object
+    const { characters: { boss, ...restChars } } = show;
+    console.log(boss);      // Mr. Krabs
+    console.log(restChars); // { main: "SpongeBob", sidekick: "Patrick", grumpyNeighbor: "Squidward", pet: "Gary" }
+
+    ```
+
+## 17 Nested Objects
+```js
+const spongebob = {
+  name: "SpongeBob SquarePants",
+  job: "Fry Cook",
+  address: {
+    street: "124 Conch Street",
+    city: "Bikini Bottom",
+    ocean: "Pacific Ocean"
+  }
+};
+
+console.log(spongebob.name);
+console.log(spongebob.address.city);
+console.log(spongebob.address.street);
+
+spongebob.address.zipcode = "BB100";
+console.log(spongebob.address);
+```
